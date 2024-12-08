@@ -1,0 +1,152 @@
+/* General Styling (No Changes Here) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(to bottom, #1E293B, #111827);
+    color: #E5E7EB;
+}
+
+/* Header (Retains Existing Styling) */
+header {
+    background: linear-gradient(to right, #1E40AF, #1E293B);
+    color: #E5E7EB;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo h1 {
+    font-size: 2em;
+}
+
+header nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+header nav ul li a {
+    color: #A5B4FC;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    color: #FBBF24;
+}
+
+/* About Section */
+.section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #F59E0B, #FBBF24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* About Cards Flex Layout */
+.about-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Individual Card Styling */
+.card {
+    position: relative;
+    flex: 1 1 calc(33.333% - 20px);
+    background: linear-gradient(to bottom, #1F2937, #374151);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    transition: flex-grow 0.5s ease, transform 0.3s ease;
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.card:hover {
+    flex-grow: 1.5; /* Expands on hover */
+    transform: scale(1.05); /* Adds scaling effect */
+}
+
+.card img.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8; /* Semi-transparent image */
+    transition: opacity 0.3s ease;
+}
+
+.card:hover img.background {
+    opacity: 1; /* Fully visible on hover */
+}
+
+.card-content {
+    position: relative;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Transparent black background for content */
+    color: #E5E7EB;
+    border-radius: 0 0 20px 20px;
+    z-index: 1;
+    width: 100%;
+}
+
+.card-content h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #FBBF24; /* Golden yellow for titles */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card-content p {
+    font-size: 1em;
+    color: #D1D5DB;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* On Hover: Reveal Content */
+.card:hover .card-content h3,
+.card:hover .card-content p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        flex: 1 1 100%;
+        height: auto; /* Adjust height on smaller screens */
+    }
+}

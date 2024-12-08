@@ -1,0 +1,93 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #7aacff;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80vmin;
+    height: 45vmin;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    border: 20px solid #ffffff;
+    border-radius: 8px;
+    box-shadow: 10px 25px 30px rgba(30, 30, 200, 0.3);
+}
+
+.wrapper {
+    display: flex;
+    width: 1000%; /* 10 images now (instead of 9) */
+    animation: slideForward 40s linear infinite; /* Forward animation with adjusted time */
+}
+
+.wrapper:hover {
+    animation-play-state: paused; /* Pause the animation on hover */
+}
+
+/* Forward sliding animation */
+@keyframes slideForward {
+    0% {
+        transform: translateX(0); /* Start with the first image */
+    }
+    10% {
+        transform: translateX(-10%); /* Move to the second image */
+    }
+    20% {
+        transform: translateX(-20%); /* Move to the third image */
+    }
+    30% {
+        transform: translateX(-30%); /* Move to the fourth image */
+    }
+    40% {
+        transform: translateX(-40%); /* Move to the fifth image */
+    }
+    50% {
+        transform: translateX(-50%); /* Move to the sixth image */
+    }
+    60% {
+        transform: translateX(-60%); /* Move to the seventh image */
+    }
+    70% {
+        transform: translateX(-70%); /* Move to the eighth image */
+    }
+    80% {
+        transform: translateX(-80%); /* Move to the ninth image */
+    }
+    90% {
+        transform: translateX(-90%); /* Move to the tenth image */
+    }
+    100% {
+        transform: translateX(-100%); /* After the last image, return to the first image */
+    }
+}
+
+a {
+    display: block; /* Ensure the anchor takes up the full space of the image */
+    width: 10%; /* Each anchor tag takes up 10% of the wrapper's width (for 10 images) */
+}
+
+img {
+    width: 100%; /* Ensure images span the full width of the anchor tag */
+    object-fit: cover; /* Ensures images fill their container without distortion */
+}
+
+a {
+    text-decoration: none; /* Removes underline from the link */
+    outline: none; /* Removes any outline when clicked */
+}
+
+a:focus {
+    outline: none; /* Removes outline when focused */
+}
+
+a:hover {
+    opacity: 0.8; /* Optional: reduce opacity on hover for a subtle effect */
+}

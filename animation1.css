@@ -1,0 +1,25 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1E293B;
+    color: #E5E7EB;
+}
+
+.container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* About Section */
+.about-details {
+    overflow: hidden;
+}
+
+/* Initial Hidden State */
+.responsive-image, h2, p {
+    visibility: hidden;
+    opacity: 0;
+}

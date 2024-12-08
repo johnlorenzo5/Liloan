@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LILOAN VISIT</title>
+    <link rel="icon" href="logoliloan.png" type="image/png">
+    <link rel="stylesheet" href="landing_page.css">
+</head>
+<body>
+    <header>
+        <!-- Logo container -->
+        <div class="logo">
+            <!-- Displays the logo image -->
+            <img src="logoliloan.png" alt="LILO-AN VISIT">
+        </div> 
+        <!-- Main navigation menu -->
+        <nav class="main-nav">
+            <ul>
+                <!-- Links sa inyo html files -->
+                <li><a href="pre.html">ABOUT US</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+        <!-- Toggle checkbox for opening and closing sa side menu -->
+        <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+        <!-- Label serves as the menu button para sa side menu -->
+        <label for="menu-toggle" class="menu-btn">☰ Menu</label>
+        <!-- Side menu for additional navigation links -->
+        <nav class="side-menu">   
+            <ul>
+                <!-- Close button para sa side menu -->
+                <label for="menu-toggle" class="close-btn">✖</label>
+                <!-- Links sa inyo html files -->
+                <li><img src="logoliloan.png" alt="LILO-AN VISIT"></li>
+                <li><a href="attractions.html">ATTRACTIONS</a></li>
+                <li><a href="events.html">EVENTS AND FESTIVALS</a></li>
+                <li><a href="food.html">FOOD AND CULTURE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+        <div class="hero">
+            <!-- Video Background -->
+            <div class="video-background">
+                <video autoplay loop muted playsinline>
+                    <source src="parola.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <h1>Liloan: Where Dreams Begin</h1>
+                <p>Your gateway to unforgettable experiences.</p>
+                <button onclick="handleButtonClick()">Explore More!</button>
+            </div>
+        </div>
+        <main>   
+            <div class="aboutliloan">
+                <div class="about-image">
+                    <img src="liloanseal.png" alt="liloanseal">
+                </div>
+                <div class="about-text">
+                    <h1>ABOUT LILOAN</h1>
+                    <p>
+                        Liloan is a charming municipality located approximately 18 kilometers north of 
+                        Cebu City in the Philippines. Its name originates from the Cebuano word “lilo,” 
+                        meaning “whirlpool,” inspired by the natural whirlpools found in its coastal waters. 
+                        Historically, Liloan was part of Mandaue and later Compostela before being established 
+                        as an independent parish in 1845, with San Fernando Rey as its patron saint. 
+                        Though it briefly merged with Compostela during the American era in 1903, 
+                        it regained its status as a separate municipality in 1919. Today, 
+                        Liloan is known for its picturesque landscapes and historical landmarks, 
+                        such as the Bagacay Point Lighthouse, built in 1904, which remains operational. 
+                        It is also famous as the home of the beloved Rosquillos biscuits, 
+                        a delicacy first crafted in 1907 by the local Titay’s bakery. The serene Silot Bay, 
+                        with its lush mangroves and vibrant marine life, adds to the town’s appeal. 
+                        Liloan’s cultural identity shines through its annual fiesta in honor of 
+                        San Fernando Rey every May, featuring vibrant parades, religious ceremonies, 
+                        and community celebrations. While embracing modernization, 
+                        the town preserves its rich heritage and local traditions, 
+                        making it a unique blend of history and progress.
+                    </p>
+                </div>
+            </div>                 
+        </main>
+
+    <script src="landing.js"></script>
+</body>
+</html>

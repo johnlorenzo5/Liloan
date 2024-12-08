@@ -1,0 +1,313 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(to bottom, #034078, #1282a2);
+    color: #FEFCFB;
+    transition: opacity 1s ease;  /* Smooth transition for fade-out */
+}
+
+
+
+
+
+/* Header */
+header {
+    position: fixed; /* para naka dikit rajud adtus taas ang navigation */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width sa screen */
+    color: #FEFCFB; /* Text color */
+    padding: 10px 20px; /* Padding sulod the header */
+    z-index: 1000; /* para stay ang header babaw ug functional sad ang mga button sa navi */
+    display: flex; /* para ma allign horizontally */
+    justify-content: center; /* ma center ang content horizontally */
+    align-items: center; /* ma center ang content vertically */
+    flex-wrap: wrap; /* para ma visible, babaw siyas background */
+}
+
+/* elements inside sa header */
+header .logo,
+header .main-nav,
+header .menu-btn {
+    margin-right: 250px; /* Adds spacing between elements */
+}
+
+header .menu-btn {
+    margin-right: 0; /* Reset margin for the menu button */
+}
+
+/* Logo styling */
+img {
+    width: 100px; /* Logo width */
+    height: 80px; /* Logo height */
+}
+
+/* Main navigation menu styling */
+.main-nav ul {
+    list-style: none; /* Remove ang bullets sa list */
+    margin: 0; /* Remove ang default margin */
+    padding: 0; /* Remove ang default padding */
+    display: flex; /* para display ang items horizontally */
+    gap: 250px; /* Space between navigation items */
+}
+
+.main-nav li {
+    display: inline-block; /* para ma inline ang mga items */
+}
+
+.main-nav a {
+    text-decoration: none; /* Remove ang underline sa links gi tudlo ni sir sa ako pag present sa ako html file*/
+    color: #FEFCFB; /* color for links */
+    font-size: 1em; /* Font size for links */
+    font-weight: 500; /* Font weight */
+    padding: 5px 10px; /* Add padding to links */
+}
+
+.main-nav a:hover {
+    color: #F59E0B; /* once mo points ang kursor kay mo lain ang color */
+}
+
+.menu-btn {
+    background: none; /* No background for the button */
+    border: none; /* Remove ang border */
+    color: #FEFCFB; /* color for the button */
+    font-size: 1.2em; /* Font size for the button */
+    cursor: pointer; /* para once matapat ang kusor mahimong pointing hand */
+    padding: 0 10px; /* Horizontal padding */
+    display: inline-block; /* para inline ang button */
+    text-align: center; /* Center ang text */
+    white-space: nowrap; /* ma prevent ang text wrapping */
+}
+
+.menu-btn:hover {
+    color: #F59E0B; /* once mo points ang kursor kay mo lain ang color */
+}
+
+/* Side menu styling */
+.side-menu {
+    position: fixed; /* Fixed to the side sa screen */
+    top: 0;
+    right: -350px; /* para ma hide siya sa screen */
+    width: 300px; /* Menu width */
+    height: 100%; /* Full height */
+    background: linear-gradient(to bottom, #034078, #001f54);
+    color: #FEFCFB; /* Text color */
+    overflow: hidden; /* para ma hide ang content */
+    transition: right 0.3s ease; /* para smooth ang transition ig open sa menu ug close */
+}
+
+/* Hide ang check box */
+.menu-checkbox {
+    display: none; 
+}
+
+/* para makita ang side menu once i click ang menu bar */
+.menu-checkbox:checked ~ .side-menu {
+    right: 0; /* para adtus sa right side mo gawas ang side menu */
+}
+
+/* Close button inside the side menu */
+.close-btn {
+    position: absolute; 
+    top: 10px; /* Distance gikan sa top */
+    right: 10px; /* Distance gikan sa left */
+    background: none; /* No background */
+    border: none; /* Remove border */
+    color: #FEFCFB; /* Text color */
+    font-size: 1.5em; /* Font size */
+    cursor: pointer; /* para once matapat ang kusor mahimong pointing hand */
+}
+
+.close-btn:hover {
+    color: #F59E0B; /* mo lahi ang color once ma point ang kursor */
+}
+
+/* Side menu content styling */
+.side-menu ul {
+    list-style: none; /* Remove ang bullet sa list */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    text-align: center; /* Center ang items */
+}
+
+.side-menu li {
+    padding: 50px; /* Space around each item */
+}
+
+.side-menu a {
+    color: #FEFCFB; /* Text color */
+    text-decoration: none; /* Remove ang underline */
+    font-size: 1em; /* Font size */
+}
+
+.side-menu a:hover {
+    background-color: #F59E0B; /* mo lahi ang color once ma point ang kursor */
+}
+
+/* Navbar Animation */
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 200px 20px;
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Video Background */
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+/* Hero Content */
+.hero-content {
+    z-index: 2;
+    position: relative;
+    color: #E5E7EB;
+    animation: fadeInSlideUp 1.5s ease-out;
+    animation-delay: 0.5s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 {
+    font-family: 'Marrriweather', serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #F59E0B;
+}
+
+.hero button {
+    padding: 10px 30px;
+    background-color: #F59E0B;
+    color: #0A1128;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hero button:hover {
+    background-color: #F59E0B;
+}
+
+/* Page Fade-Out Animation */
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* Updated About Liloan Section */
+.aboutliloan {
+    display: flex; /* Align items horizontally */
+    align-items: center; /* Center vertically */
+    margin: 50px auto; /* Space around the section */
+    padding: 50px; /* Internal padding */
+    max-width: 800px; /* Limit width for better layout */
+    background: rgba(255, 255, 255, 0.8); /* Light background with transparency */
+    border-radius: 15px; /* Rounded corners */
+    color: #034078; /* Text color */
+    text-align: justify; /* Justify text alignment */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+    gap: 50px; /* Add spacing between columns */
+}
+
+.aboutliloan .about-image img {
+    width: 100%; /* Make the image responsive */
+    max-width: 150px; /* Limit the image size */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center-align the image */
+    display: block; /* Ensures it's a block-level element */
+}
+
+.aboutliloan .about-text {
+    flex: 1; /* Allow the text column to grow */
+    font-size: 1rem; /* Adjust font size for readability */
+    line-height: 1.8; /* Line spacing */
+    padding-top: 20px;
+}
+.about-text h1{
+    font-family: 'Marrriweather', serif;
+    text-align: center;
+    padding-bottom: 30px;
+}
